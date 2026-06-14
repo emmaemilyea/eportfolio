@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A212022_NUR_EMMA_EMILYEA_DR_NAZATUL_Project2</title>
+    <!-- Added FontAwesome for icons like your friend's code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --maroon-dark: #3b050f;
@@ -106,7 +108,6 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        /* Unique Stylized Independent Matric Badge */
         .matric-badge-container {
             margin-bottom: 1.2rem;
         }
@@ -147,7 +148,12 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        /* Dedicated SDG Dynamic Accent Container Box */
+        .profile-card p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #fffbf9;
+        }
+
         .sdg-alignment-card {
             background: linear-gradient(135deg, rgba(122, 34, 53, 0.35), rgba(59, 5, 15, 0.55));
             padding: 2rem;
@@ -159,7 +165,7 @@
         }
 
         .sdg-badge {
-            background-color: #f26a36; /* Color match for global SDG 12 */
+            background-color: #f26a36; 
             color: #ffffff;
             padding: 0.5rem 1.1rem;
             border-radius: 8px;
@@ -172,7 +178,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Main Section Content Wrapper */
         section {
             padding: 6rem 2rem 2rem 2rem;
             max-width: 1140px;
@@ -189,7 +194,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Grid Layouts for Labs and Projects */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -225,6 +229,9 @@
             margin-bottom: 0.6rem;
             font-size: 1.4rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .card .description {
@@ -233,67 +240,25 @@
             margin-bottom: 1.4rem;
         }
 
-        /* Responsive Video Container - Custom Click to Play on YouTube Link Layout */
-        .video-click-wrapper {
-            display: block;
-            text-decoration: none;
+        /* Beautiful Video Wrapper Matching Your Friend's Embedded Player style */
+        .video-wrapper {
             position: relative;
-            width: 100%;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
-            background-color: #120104;
+            overflow: hidden;
             border-radius: 12px;
             margin-bottom: 1.4rem;
-            overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            border: 1px solid rgba(252, 168, 149, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
+            background-color: #000;
         }
 
-        .video-click-wrapper:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(92, 19, 33, 0.3);
-        }
-
-        .video-click-wrapper img {
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.75;
-            transition: opacity 0.2s;
-        }
-
-        .video-click-wrapper:hover img {
-            opacity: 0.9;
-        }
-
-        /* Play Button Overlay Element */
-        .play-button-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(201, 42, 20, 0.95); /* YouTube Crimson */
-            color: white;
-            padding: 0.8rem 1.4rem;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            transition: background-color 0.2s, transform 0.2s;
-            pointer-events: none; /* Passes clicks straight to structural tag */
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .video-click-wrapper:hover .play-button-overlay {
-            background-color: #b81d18;
-            transform: translate(-50%, -50%) scale(1.08);
+            border: 0;
         }
 
         .reflection-box {
@@ -304,9 +269,6 @@
             font-size: 0.92rem;
             color: var(--text-main);
             margin-top: auto;
-            border-top: 1px solid #fff5f0;
-            border-right: 1px solid #fff5f0;
-            border-bottom: 1px solid #fff5f0;
         }
 
         .problem-statement {
@@ -318,10 +280,8 @@
             font-weight: 600;
             margin-bottom: 1.4rem;
             border: 1px solid var(--rose-accent);
-            line-height: 1.5;
         }
 
-        /* Buttons layout */
         .btn {
             display: inline-block;
             background: linear-gradient(135deg, var(--maroon-light), var(--maroon-mid));
@@ -333,17 +293,14 @@
             margin-top: 1.4rem;
             text-align: center;
             transition: all 0.2s ease;
-            border: 1px solid var(--maroon-dark);
             box-shadow: 0 4px 12px rgba(92, 19, 33, 0.2);
         }
 
         .btn:hover {
             background: var(--maroon-dark);
-            box-shadow: 0 6px 18px rgba(59, 5, 15, 0.35);
             transform: translateY(-1px);
         }
 
-        /* Dynamic Highlighting "Bubble/Pill" Skill Tags Container */
         .interactive-pills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -351,28 +308,22 @@
             margin-top: 1.5rem;
         }
 
-        /* Custom Highlight-on-Touch Pill Styling */
         .skill-bubble-pill {
             background-color: var(--peach-section);
             color: var(--maroon-dark);
             padding: 0.6rem 1.4rem;
-            border-radius: 50px; /* Gives it the clean bubble/pill shape */
+            border-radius: 50px;
             font-size: 1rem;
             font-weight: 600;
             border: 2px solid var(--rose-pastel);
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 2px 6px rgba(59, 5, 15, 0.02);
-            user-select: none;
+            transition: all 0.2s ease;
         }
 
-        /* The Bubble Touch Highlight Trigger Effect */
         .skill-bubble-pill:hover {
             background-color: var(--maroon-mid);
             color: #ffffff;
-            border-color: var(--rose-accent);
-            transform: scale(1.1) translateY(-3px); /* Softly expands and pops up */
-            box-shadow: 0 8px 20px rgba(92, 19, 33, 0.2);
+            transform: scale(1.05);
         }
 
         ul.resources-list {
@@ -384,7 +335,6 @@
             margin-bottom: 0.7rem;
         }
 
-        /* Footer configuration */
         footer {
             background-color: var(--maroon-dark);
             color: var(--rose-pastel);
@@ -393,29 +343,12 @@
             margin-top: 6rem;
             font-size: 0.95rem;
             border-top: 4px solid var(--rose-accent);
-            letter-spacing: 0.5px;
-        }
-
-        /* Responsive UI adjustments */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1.2rem;
-                padding: 1.2rem;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1.2rem;
-            }
-            header h1 {
-                font-size: 2.2rem;
-            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Menu -->
     <nav>
         <div class="logo">Emma's e-Portfolio</div>
         <ul>
@@ -428,6 +361,7 @@
         </ul>
     </nav>
 
+    <!-- Header Section -->
     <header id="home">
         <div class="container">
             <h1>NUR EMMA EMILYEA BINTI HELMI</h1>
@@ -442,13 +376,15 @@
             </div>
             
             <div class="profile-container-layout">
+                <!-- Profile Introduction inspired by image_4894e0.png -->
                 <div class="profile-card">
-                    <p><strong>Introduction & Goals:</strong> I am a 2ndyear Software Engineering student who is passionate about crafting highly responsive, clean-coded mobile applications using modern declarative UI frameworks. My goal throughout this course has been to bridge local device tracking mechanics with real-time cloud data pipelines, establishing highly isolated architectures that promote impactful sustainable living solutions.</p>
+                    <p>I am a 2nd year software engineering student who is passionate to learn more about mobile app development! In this subject, I developed an app called <strong>Grocerlyst</strong> which helps users manage their shopping items, track dynamic weekly budget limits in real-time, scan barcodes, and sync data seamlessly to cloud platforms.</p>
                 </div>
 
+                <!-- SDG Alignment Box -->
                 <div class="sdg-alignment-card">
                     <div class="sdg-badge">SDG 12: Responsible Consumption & Production</div>
-                    <p style="color: var(--rose-pastel); font-size: 1.05rem; line-height: 1.6;">
+                    <p style="color: var(--rose-pastel); font-size: 1.05rem;">
                         <strong>SDG Statement:</strong> Many people struggle to track their grocery spending in real-time, leading to overspending and food waste. Grocerlyst provides a simple tool to log items and monitor a weekly budget to encourage more mindful shopping habits.
                     </p>
                 </div>
@@ -456,86 +392,87 @@
         </div>
     </header>
 
+    <!-- Lab Submissions Section -->
     <section id="labs">
         <h2>Lab Exercises (1 - 5)</h2>
         <div class="grid">
 
+            <!-- Lab 1 -->
             <div class="card">
                 <div class="card-content">
-                    <h3>Lab 1: UI Implementation</h3>
+                    <h3><i class="fas fa-palette"></i> Lab 1: UI Implementation</h3>
                     <p class="description">Cloning the layout static architecture of a grocery budget application using fundamental UI Composables.</p>
                     
-                    <a href="https://youtu.be/grUaNaCOuyI" class="video-click-wrapper" target="_blank">
-                        <img src="https://img.youtube.com/vi/grUaNaCOuyI/hqdefault.jpg" alt="Lab 1 Thumbnail">
-                        <div class="play-button-overlay">▶ Open Video</div>
-                    </a>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/grUaNaCOuyI" title="Lab 1 Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
                     <div class="reflection-box">
-                        <strong>Reflection:</strong> I learned how to use Box layouts as root scopes to cleanly layer translucent background image visual components. Nesting organized Columns and Rows properly taught me the strictness of Jetpack Compose scope alignment trees and resolved missing syntax anomalies that cause hidden structural components.
+                        <strong><i class="fas fa-microphone-alt"></i> Reflection:</strong> I learned how to use Box layouts as root scopes to cleanly layer background visual components. Nesting organized Columns and Rows properly taught me the strictness of Jetpack Compose scope alignment trees.
                     </div>
                 </div>
             </div>
 
+            <!-- Lab 2 -->
             <div class="card">
                 <div class="card-content">
-                    <h3>Lab 2: User Interaction & State</h3>
+                    <h3><i class="fas fa-keyboard"></i> Lab 2: User Interaction & State</h3>
                     <p class="description">Implementing runtime form captures, active dynamic input elements, and handling input soft keyboard focus trees.</p>
                     
-                    <a href="https://youtu.be/e_st8Ygp0N4" class="video-click-wrapper" target="_blank">
-                        <img src="https://img.youtube.com/vi/e_st8Ygp0N4/hqdefault.jpg" alt="Lab 2 Thumbnail">
-                        <div class="play-button-overlay">▶ Open Video</div>
-                    </a>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/e_st8Ygp0N4" title="Lab 2 Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
                     <div class="reflection-box">
-                        <strong>Reflection:</strong> This exercise detailed state variables initialized via remember and mutableStateOf patterns. I successfully engineered dynamic validation prompts and leveraged FocusManagers combined with scrollable states to gracefully handle keyboard layout transitions without text block clippings.
+                        <strong><i class="fas fa-microphone-alt"></i> Reflection:</strong> This exercise detailed state variables initialized via remember and mutableStateOf patterns. I successfully engineered dynamic validation prompts and leveraged focus settings gracefully.
                     </div>
                 </div>
             </div>
 
+            <!-- Lab 3 -->
             <div class="card">
                 <div class="card-content">
-                    <h3>Lab 3: Material Design Theme</h3>
-                    <p class="description">Generating a responsive application theme using Material 3 color palettes and applying fluid tween animations.</p>
+                    <h3><i class="fas fa-wand-magic-sparkles"></i> Lab 3: Material Design Theme</h3>
+                    <p class="description">Generating a responsive application theme using Material 3 color palettes and applying fluid transitions.</p>
                     
-                    <a href="https://youtu.be/VnDAZZduxDk" class="video-click-wrapper" target="_blank">
-                        <img src="https://img.youtube.com/vi/VnDAZZduxDk/hqdefault.jpg" alt="Lab 3 Thumbnail">
-                        <div class="play-button-overlay">▶ Open Video</div>
-                    </a>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VnDAZZduxDk" title="Lab 3 Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
                     <div class="reflection-box">
-                        <strong>Reflection:</strong> I mastered programmatic Material Theme color mapping algorithms across light and dark system backgrounds. Additionally, adding non-linear spring physics to card element bounds and utilizing alpha-blended overlay containers taught me how crucial micro-interactions are for card information hierarchies.
+                        <strong><i class="fas fa-microphone-alt"></i> Reflection:</strong> I mastered programmatic Material Theme color mapping algorithms across light and dark system backgrounds to improve visual hierarchy.
                     </div>
                 </div>
             </div>
 
+            <!-- Lab 4 -->
             <div class="card">
                 <div class="card-content">
-                    <h3>Lab 4: Multi-Screen Navigation</h3>
+                    <h3><i class="fas fa-route"></i> Lab 4: Multi-Screen Navigation</h3>
                     <p class="description">Structuring a decoupled application flow via standard Navigation Controllers and persistent view state architectures.</p>
                     
-                    <a href="https://youtu.be/-joa0xPaaY0" class="video-click-wrapper" target="_blank">
-                        <img src="https://img.youtube.com/vi/-joa0xPaaY0/hqdefault.jpg" alt="Lab 4 Thumbnail">
-                        <div class="play-button-overlay">▶ Open Video</div>
-                    </a>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/-joa0xPaaY0" title="Lab 4 Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
                     <div class="reflection-box">
-                        <strong>Reflection:</strong> I implemented structured NavHosts bound to enum route vectors for clean view switching. Transitioning local component states into centralized ViewModel classes proved how isolated data layers effectively survive system configuration disruptions like orientation rotations.
+                        <strong><i class="fas fa-microphone-alt"></i> Reflection:</strong> Transitioning local component states into centralized ViewModel classes proved how isolated data layers effectively survive device orientation changes.
                     </div>
                 </div>
             </div>
 
+            <!-- Lab 5 -->
             <div class="card">
                 <div class="card-content">
-                    <h3>Lab 5: Local Database Persistence</h3>
+                    <h3><i class="fas fa-database"></i> Lab 5: Local Database Persistence</h3>
                     <p class="description">Implementing permanent local cache layers using asynchronous Room Data Access Object operations.</p>
                     
-                    <a href="https://youtu.be/16DNNT2JdBE" class="video-click-wrapper" target="_blank">
-                        <img src="https://img.youtube.com/vi/16DNNT2JdBE/hqdefault.jpg" alt="Lab 5 Thumbnail">
-                        <div class="play-button-overlay">▶ Open Video</div>
-                    </a>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/16DNNT2JdBE" title="Lab 5 Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
                     <div class="reflection-box">
-                        <strong>Reflection:</strong> This lab focused on offline-first storage mechanics using explicit Room entities and repository interfaces. I successfully mapped safe Coroutine routines to safely update and delete item row structures directly from an active alert interaction box.
+                        <strong><i class="fas fa-microphone-alt"></i> Reflection:</strong> This lab focused on offline-first storage mechanics using explicit Room entities and repository interfaces to securely handle local data tables.
                     </div>
                 </div>
             </div>
@@ -543,45 +480,46 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <h2>Project Milestones</h2>
         <div class="grid">
 
+            <!-- Project 1 -->
             <div class="card">
                 <div class="card-content">
-                    <h3>Project 1: Unified MVP Framework</h3>
+                    <h3><i class="fas fa-box"></i> Project 1: Unified MVP Framework</h3>
                     <p class="description">Building an interactive, 5-screen prototype with centralized state routing to track real-time grocery expenses.</p>
                     <div class="problem-statement">
                         ⚠️ Problem: People struggle to track grocery spending in real-time, causing overspending and avoidable organic food waste.
                     </div>
                     
-                    <a href="https://youtu.be/Bour1EIvYVo" class="video-click-wrapper" target="_blank">
-                        <img src="https://img.youtube.com/vi/Bour1EIvYVo/hqdefault.jpg" alt="Project 1 Thumbnail">
-                        <div class="play-button-overlay">▶ Open Video</div>
-                    </a>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/Bour1EIvYVo" title="Project 1 Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
                     <div class="reflection-box">
-                        <strong>Lessons Learned:</strong> Unifying 5 complete screens under a cohesive Shared ViewModel data layer allowed my application states to synchronize globally. This ensured that over-budget structural state changes instantly pushed colored alarms to the dashboard and analytics bar graphs in real time.
+                        <strong>Lessons Learned:</strong> Unifying 5 screens under a cohesive Shared ViewModel data layer allowed my application states to synchronize globally, flashing alerts whenever budgets were exceeded.
                     </div>
                     <a href="https://github.com/emmaemilyea/A212022_Emma_Nazatul_Project1" class="btn" target="_blank">View on GitHub</a>
                 </div>
             </div>
 
+            <!-- Project 2 -->
             <div class="card">
                 <div class="card-content">
-                    <h3>Project 2: Advanced Hardware & Cloud Sync</h3>
+                    <h3><i class="fas fa-cloud"></i> Project 2: Advanced Hardware & Cloud Sync</h3>
                     <p class="description">Upgrading the platform into a 7-screen, hardware-aware app running local Room caches, external Web APIs, and Firestore cloud trees.</p>
                     <div class="problem-statement">
                         ⚠️ Problem: Real-time budget visibility requires automated tracking, profile isolation, and continuous remote analytical records.
                     </div>
                     
-                    <a href="https://youtu.be/MF-HpgpEyaQ" class="video-click-wrapper" target="_blank">
-                        <img src="https://img.youtube.com/vi/MF-HpgpEyaQ/hqdefault.jpg" alt="Project 2 Thumbnail">
-                        <div class="play-button-overlay">▶ Open Video</div>
-                    </a>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/MF-HpgpEyaQ" title="Project 2 Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
                     <div class="reflection-box">
-                        <strong>Lessons Learned:</strong> I learned how to orchestrate a camera sensor to pull real-time grades from the OpenFoodFacts REST API using Retrofit. Connecting a real-time Firestore collection snapshot listener partitioned by secure user ID documents taught me how to cleanly synchronize and completely isolate user accounts across cloud databases.
+                        <strong>Lessons Learned:</strong> I configured a camera sensor to pull information from the OpenFoodFacts REST API via Retrofit and combined it with Firestore real-time collection sync.
                     </div>
                     <a href="https://github.com/emmaemilyea/A212022_Emma_Nazatul_Project2" class="btn" target="_blank">View on GitHub</a>
                 </div>
@@ -590,6 +528,7 @@
         </div>
     </section>
 
+    <!-- Growth Reflection Section -->
     <section id="reflection">
         <h2>Overall Learning Journey Reflection</h2>
         <div class="card" style="padding: 2rem;">
@@ -599,10 +538,9 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
         <h2>Technical Skill Stack</h2>
-        <p style="color: var(--text-muted); margin-bottom: 0.5rem; font-size: 0.95rem;">Hover or tap on each skill badge to reveal the dynamic bubble highlighting focus!</p>
-        
         <div class="interactive-pills-grid">
             <div class="skill-bubble-pill">Kotlin</div>
             <div class="skill-bubble-pill">Jetpack Compose</div>
@@ -617,18 +555,20 @@
         </div>
     </section>
 
+    <!-- Resources Section -->
     <section id="resources">
         <h2>Resources & References</h2>
         <div class="card" style="padding: 2rem;">
             <ul class="resources-list">
-                <li><strong>OpenFoodFacts API:</strong> Used to query and fetch nutritional and sustainability grades based on barcode scanner inputs.</li>
-                <li><strong>Google Firebase Libraries:</strong> Employed to implement user profile isolation via Authentication and real-time analytics dashboards via Cloud Firestore listeners.</li>
-                <li><strong>Jetpack Architecture Components:</strong> Built with Room databases, ViewModels, and Compose Navigation packages.</li>
-                <li><strong>AI Assistance Disclosure:</strong> Generative AI models (Gemini) were used transparently to debug layout compilation syntax, configure Kotlin DSL Gradle build dependencies, and optimize Firestore document mapping paths.</li>
+                <li><strong>OpenFoodFacts API:</strong> Used to query and fetch nutritional data via barcode scans.</li>
+                <li><strong>Google Firebase:</strong> Employed for user profile authentication and Firestore databases.</li>
+                <li><strong>Jetpack Architecture Components:</strong> Built with Room database, ViewModels, and Compose Navigation.</li>
+                <li><strong>AI Assistance Disclosure:</strong> Generative AI models (Gemini) were used to optimize formatting setups, configure responsive styling bounds, and fix repository setup configurations.</li>
             </ul>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>NUR EMMA EMILYEA BINTI HELMI | Matric No: A212022 | Mobile Programming e-Portfolio &copy; 2026</p>
     </footer>
